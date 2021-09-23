@@ -238,3 +238,76 @@ const UICrtl = (function () {
   };
 })();
 
+//App Controller
+const App = (function (mealItemCntrl, StorageCtrl, UICrtl) {
+    //load event listener
+    const loadEventListeners = function () {
+      const UISelectors = UICrtl.getSelectors();
+  
+      //add item event
+      document
+        .querySelector(UISelectors.addBtn)
+        .addEventListener("click", itemAddSubmit);
+  
+      //Edit icon click event
+      document
+        .querySelector(UISelectors.itemList)
+        .addEventListener("click", itemEditClick);
+  
+      // Update one item
+      document
+        .querySelector(UISelectors.updateBtn)
+        .addEventListener("click", itemUpdateSubmit);
+  
+      // Return to list adding
+      document
+        .querySelector(UISelectors.backBtn)
+        .addEventListener("click", function (e) {
+          UICrtl.clearEditState();
+          e.preventDefault();
+        });
+          //Delte one item
+    document
+    .querySelector(UISelectors.deleteBtn)
+    .addEventListener("click", deleteItem);
+
+  document
+    .querySelector(UISelectors.clearBtn)
+    .addEventListener("click", clearAllItem);
+
+  document.addEventListener("keypress", function (e) {
+    if (e.keyCode === 13 || e.which === 13) {
+      e.preventDefault();
+      return false;
+    }
+  });
+};
+
+ //add item submit
+ const itemAddSubmit = function (e) {
+    //Get form input from UICtrl
+    const input = UICrtl.getItemInput();
+    if (input.name !== "" && input.calories !== "") {
+      const newItem = mealItemCntrl.addItem(input.name, input.calories);
+
+      //add item to the UI
+      UICrtl.addListItem(newItem);
+
+      //Get total calorie
+      const totalCal = mealItemCntrl.getTotCalories();
+
+      //Update calorie.
+      UICrtl.updateTotCalories(totalCal);
+
+      // made list appeared
+      UICrtl.statusList("block");
+
+      //store in localStorage
+      StorageCtrl.storeItem(newItem);
+
+      //clear input fields
+      UICrtl.clearInputs();
+    }
+
+    e.preventDefault();
+  };
