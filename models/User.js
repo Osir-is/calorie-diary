@@ -7,17 +7,21 @@ class user extends Models {
 //create user table 
 User.init(
     {
-      id: {
+      id: {  //enter id
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      firstName: {  //enter name
         type: DataTypes.STRING,
         allowNull: false,
       },
-      email: {
+      lastName: {  //enter name
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      email: {  //enter email address
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
@@ -25,7 +29,7 @@ User.init(
           isEmail: true,
         },
       },
-      password: {
+      password: {   //enter password
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -38,9 +42,20 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'userMeals',
-      }
-    );
-    
+        modelName: 'calories',
+      },
+      {
+        hooks: {
+          beforeCreate: async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          },
+          beforeUpdate: async (updatedUserData) => {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+          },
+        },
+      });
+
     module.exports = userMeals;
     
