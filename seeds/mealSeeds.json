@@ -1,0 +1,11 @@
+[
+    {
+        "id": 0,
+        "breakfast": "Bacon & Eggs" ,
+        "lunch": "Chicken pasta" ,
+        "dinner": "Pizza" ,
+        "snacks": "Snickers",
+        "water": 4,
+        "mealtime": 43
+    }
+]

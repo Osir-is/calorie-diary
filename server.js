@@ -1,17 +1,19 @@
 const express = require('express');
-const routes = require('./routes');
+const path = require('path');
 const sequelize = require('./config/connection');
+require ('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+//app.use(routes);
 
-// turn on routes
-app.use(routes);
-
-// turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+//Wait for database to connect then allow server to listen to requests
+sequelize.sync({ force: false}).then(() => {   //connect database
+        app.listen(PORT, () => 
+        console.log("Server listening on port: "+ PORT));  //server listening for requests
+      });    
+    
