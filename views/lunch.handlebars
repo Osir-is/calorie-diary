@@ -2,7 +2,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-md 
 navbar-light bg-transparent">
-      <a href="/" class="navbar-brand logo">SANAYA <span class="dotlogo"></span></a>
+      <a href="/" class="navbar-brand logo">Calorie Diary</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@ navbar-light bg-transparent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="history">
-              View My Logs
+            My Meals
             </a>
           </li>
           <li class="nav-item">
@@ -21,25 +21,29 @@ navbar-light bg-transparent">
         </ul>
       </div>
     </nav>
-    <div class="container historySection">
-<h1 class="logTitle text-center text-uppercase">Coffee <span class="dot"></span></h1>
+
+<div class="container historySection">
+<h1 class="logTitle text-center text-uppercase">LUNCH</h1>
 <h2 class="text-uppercase">{{user.userName}}</h2>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Date Logged</th>
-      <th scope="col">Your coffee intake (cups)</th>
+      <th scope="col">Lunch</th>
+      <th scope="col">Calories</th>
+
     </tr>
   </thead>
   <tbody>
-    {{#each getData }}
-    <tr> 
+     {{#each getData }}
+    <tr>
       <th scope="row">{{inputDate}}</th>
-      <td>{{coffeeUnits}}</td>
+      <td>{{lunch}}</td>
+      <td>{{lunchcl}}</td>
     </tr>
-    {{/each}}
   </tbody>
+   {{/each}}
 </table>
+
 </div>
-<h3>{{message}}</h3>
 </div>

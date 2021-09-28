@@ -1,8 +1,7 @@
 <div class="dashboardBackground">
   <div class="container">
-    <nav class="navbar navbar-expand-md 
-navbar-light bg-transparent">
-      <a href="/" class="navbar-brand logo">CC <span class="dotlogo"></span></a>
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent">
+      <a href="/" class="navbar-brand logo">Calorie Counter</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,88 +9,81 @@ navbar-light bg-transparent">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="history">
-              View My Logs
-            </a>
+            <a class="nav-link" href="history">View My Meals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">
-              Logout
-            </a>
+            <a class="nav-link" href="/">Logout</a>
         </ul>
       </div>
     </nav>
   </div>
-
-
   <div class="history">
     <section class="services-class r-p" id="services-id">
       <div class="container text-center">
         <div class="row">
           <div class="col mb-5 way-fade-right">
             <div class="col">
-
-              <h2 class="logTitle">Previous Logs <span class="dot"></span></h2>
+              <h2 class="logTitle">Meal Logs <span class="dot"></span></h2>
             </div>
           </div>
         </div>
+
         <div class="container mt-2">
           <div class="row way-fade-left">
             <div class="col-md-4 col-sm-6 item">
               <div class="card item-card card-block">
-                <h4 class="card-title text-right"></h4>
-                <a href="mood"><img class="card-img-top cOne-img" src="/public/img/breakfast.jpg" alt=""></a>
-                <h5 class="item-card-title mt-3 mb-3">Breakfast</h5>
+                <h4 class="item-card-title text-right"></h4>
+                <a href="breakfast"><img class="card-img-top cOne-img" src="/assets/img/breakfast.jpg" alt="breakfast"></a>
+                <h5 class="card-title mt-3 mb-3">Breakfast</h5>
                 <div class="service-border"></div>
-
-
               </div>
             </div>
-            <div class="col-md-4 col-sm-6 item">
-              <div class="card item-card card-block">
-                <h4 class="card-title text-right"></h4>
-                <a href="exercise"><img class="card-img-top cOne-img" src="/public/img/lunch.jpg" alt=""></a>
-                <h5 class="item-card-title mt-3 mb-3">Lunch</h5>
-                <div class="service-border"></div>
 
-
-              </div>
-            </div>
             <div class="col-md-4 col-sm-6 item">
               <div class="card item-card card-block">
                 <h4 class="item-card-title text-right"></h4>
-                <a href="sleep"><img class="card-img-top c-img" src="/public/img/Dinner.jpg" alt=""></a>
+                <a href="lunch"><img class="card-img-top cOne-img" src="/assets/img/lunch.jpg" alt="lunch"></a>
+                <h5 class="card-title mt-3 mb-3">Lunch</h5>
+                <div class="service-border"></div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 item">
+              <div class="card item-card card-block">
+                <h4 class="item-card-title text-right"></h4>
+                <a href="dinner"><img class="card-img-top c-img" src="/assets/img/Dinner.jpg" alt=""></a>
                 <h5 class="card-title  mt-3 mb-3">Dinner</h5>
                 <div class="service-border"></div>
-
               </div>
             </div>
+
             <div class="col-md-4 col-sm-6 item">
               <div class="card item-card card-block">
                 <h4 class="item-card-title text-right"></h4>
-                <a href="steps"><img class="card-img-top c-img" src="/public/img/snacks.jpg" alt=""></a>
+                <a href="snacks"><img class="card-img-top c-img" src="/assets/img/snacks.jpg" alt=""></a>
                 <h5 class="card-title  mt-3 mb-3">Snacks</h5>
                 <div class="service-border"></div>
-
-
               </div>
             </div>
-            <div class="col-md-4 col-sm-6 item">
+
+             <div class="col-md-4 col-sm-6 item">
               <div class="card item-card card-block">
                 <h4 class="item-card-title text-right"></h4>
-                <a href="calories"><img class="card-img-top c-img" src="/img/calorie-01.png" alt=""></a>
-                <h5 class="card-title  mt-3 mb-3">Calories</h5>
+                <a href="meals"><img class="card-img-top c-img" src="/img/bgSelfie.png" alt=""></a>
+                <h5 class="card-title  mt-3 mb-3">My Meals</h5>
                 <div class="service-border"></div>
-
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 
-  
-    <button type="submit" id="deleteBtn" class="btn deletebtn text-uppercase">Delete My
-      Previous Logs</button><br>
- 
-  </section>
-
-</div>
+  <div class="container">
+    <button type="submit" id="deleteBtn" class="btn deletebtn btn-danger text-uppercase">Delete My
+      History
+      </button>
+  </div>
 </div>
