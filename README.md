@@ -5,7 +5,7 @@ You will first be prompted to login to the site or create a login, they will the
 
 # Table of Contents 
   - [Usage](##usage)
-  - [Installation](##installation)
+  - [Link to the site](##Deployed)
   - [User Story](##user-story)
   - [Environment](##environment)
   - [Contributors](##contributors)
@@ -25,6 +25,9 @@ Screenshots:
 
 
 ![screenshot4](/assets/img/screenshot4.jpg)
+
+## Deployed
+The link to the deployed site: https://dem0o.herokuapp.com/
 
 
 ## User Story
